@@ -1,0 +1,9 @@
+.addCourseForm{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+    grid-template-columns: 30rem;
+    border: 1px inset black;
+    min-height: 85vh;
+}
