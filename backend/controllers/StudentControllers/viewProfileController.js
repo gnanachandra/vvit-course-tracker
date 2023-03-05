@@ -12,7 +12,7 @@ const viewProfileController = async(req,res)=>{
    }
    else{
     //sending the user data available along with the courses enrolled by the user
-    res.staus(200).json({"status":"success",'message':userData,"data":userData});
+    res.status(200).json({"status":"success",'message':'user data sent',"data":userData});
    }
 }
 module.exports = viewProfileController;

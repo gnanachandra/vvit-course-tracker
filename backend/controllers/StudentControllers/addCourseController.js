@@ -9,7 +9,7 @@ const addCourseController = async (req, res) => {
   const user = await User.findOne({ email: req.body.email });
 
   //getting the courses in which the student is currently enrolled  in
-  const courses = user.courses;
+  const courses = user['courses'];
 
   //a varaiable to know whether student requested for a duplicate enrollment
   let found = false;
@@ -30,7 +30,7 @@ const addCourseController = async (req, res) => {
 
   //if the course is found already in the students data sending response with status code 409 - conflict
   if (found) {
-    return res.status(409).json({"status":"failed","message": "user already enrolled in the course","data":user});
+    return res.status(409).json({"status":"failed","message": "user already enrolled in the course","data":await user.populate('courses')});
   } else {
 
     //creating a new course document
@@ -43,9 +43,8 @@ const addCourseController = async (req, res) => {
     //updating the courses field of the student
     const update = { $set: { courses: courses } };
     await user.update(update);
-
     //sending the response to the user with updated student data and response code 200
-    return res.json({"status":"success","message": "user enrolled in the course","data":user});
+    return res.json({"status":"success","message": "user enrolled in the course","data":await user.populate('courses')});
   }
 };
 module.exports = addCourseController;
