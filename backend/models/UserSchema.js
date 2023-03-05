@@ -33,7 +33,7 @@ const UserSchema = new mongoose.Schema({
     },
     password :{
         type:String,
-        required:[true,"provide Password"]
+        required:[true,"provide Password"] 
     },
     courses : [{
         type:mongoose.Schema.Types.ObjectId,
