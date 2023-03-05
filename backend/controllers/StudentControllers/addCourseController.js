@@ -14,7 +14,7 @@ const addCourseController = async (req, res) => {
       currentCourse.platform === req.body.platform &&
       currentCourse.enrolledIn === req.body.enrolledIn
     ) {
-  
+   
       found = true;
   
       break; // Exit the loop if course is found

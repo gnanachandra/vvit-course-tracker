@@ -31,10 +31,6 @@ const UserSchema = new mongoose.Schema({
         type:String,
         required:[true,"provide year"]
     },
-    contactNo :{
-        type:String,
-        required:[true,"provide Contact No "],
-    },
     password :{
         type:String,
         required:[true,"provide Password"]

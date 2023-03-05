@@ -37,11 +37,11 @@ app.get("/refresh",handleRefreshToken);
 app.post("/addAnnouncement",newAnnouncementController)
 app.get("/getAnnouncements",getAnnouncements);
 app.post("/getStudents",getStudents);
-
+app.post("/addCourse",addCourseController);
 app.get("/viewProfile",viewProfileController);
 //student controllers - verify jwt before profile and add course
 app.use(verifyJWT);
-app.post("/addCourse",addCourseController);
+
 
 
 

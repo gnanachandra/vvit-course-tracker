@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+   
 const CourseSchema = new mongoose.Schema({
     courseName : {
         type:String,
@@ -9,10 +9,10 @@ const CourseSchema = new mongoose.Schema({
         type : String,
         required : [true,"Provide Course Platform"],
     },
-    enrolledIn : {
+    enrolledIn : { 
         type : String,
         required : [true,"Provide Enrolled Semester"],
     }
-});
+}); 
 
 module.exports = mongoose.model("Course",CourseSchema);
